@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Coach-chat</h1>
+  <div class="flex-wrapper">
+    <p class="message-box question"><%= @answer %></p>
+    <p>- you</p>
+
+    <% if @answer.match?(/.+\?/i) %>
+    <p class="message-box answer"><%= "Silly question, get dressed and go to work!" %></p>
+
+    <% elsif @answer == "I am going to work" %>
+    <p class="message-box answer"><%= "Great!" %></p>
+    <% else %>
+    <p class="message-box answer"><%= "I don't care, get dressed and go to work!" %></p>
+    <% end %>
+    <p>- coach</p>
+  </div>
+  <%= link_to "Ask another question", ask_path, class: "btn" %>
+</div>
